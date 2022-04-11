@@ -13,11 +13,6 @@ let password = prompt("ingrese su contraseña");
 
 console.log (username, email, password)
 
-//arrays para items
-let tiendita = [remera1, remera2, remera3, remera4, gorra1, gorra2, mousepad1, mousepad2]
-console.log (tiendita)
-//arrays para stock/precios 
-
 //funcion flecha para sumar articulos disponibles y mostrar precio total
 //para futuro proyecto final
 const precioTotal = (a, b) => a+b
@@ -63,3 +58,24 @@ comprarProducto(cantidad); {
         Total: ${precioFinal}`);
     } else {alert("En este momento no temeos stock. Intente más tarde o contactenos")}
 }
+//ARRAYS -- ejemplo entrega opcional2
+let tiendita = ["remera1", "remera2", "remera3", "remera4", "remera5", "remera6", "remera7"]
+console.log(tiendita)
+
+tiendita.unshift("remera0");
+console.log(tiendita)
+
+tiendita.push("remera8");
+console.log(tiendita)
+
+console.log(tiendita.indexOf("remera4"));
+console.log(tiendita.indexOf("gorra"));
+
+let nuevaRemera = prompt("Felicidades! Podes agregar un diseño de remera ¿Como deberiamos llamarla?")
+tiendita.push(nuevaRemera)
+console.log(tiendita)
+
+//arrays para items
+let tiendita2 = [remera1, remera2, remera3, remera4, gorra1, gorra2, mousepad1, mousepad2]
+console.log (tiendita)
+//arrays para stock/precios 
