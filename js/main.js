@@ -86,3 +86,17 @@ console.log(filtroMenor750);
 // console.log(BuscarPrecioMayorA);
 // const buscar = tiendita.find (el=>el.categoria=prompt("Seleccione una de las categorías: 'remera', 'gorra', 'taza', 'varios','acceCel'")));
 // console.log(buscar);
+
+//DOM 
+console.dir(document)
+document.body
+
+let mercha = document.getElementsByClassName("divss");
+console.log(mercha);
+
+let ofertaCartel = document.createElement ("ofertaCartel");
+ofertaCartel.innerHTML= ("<h2>OFERTA TIEMPO LIMITADO!!</h2>");
+document.body.append(ofertaCartel)
+
+
+
