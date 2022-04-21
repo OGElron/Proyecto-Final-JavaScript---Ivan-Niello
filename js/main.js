@@ -98,5 +98,32 @@ let ofertaCartel = document.createElement ("ofertaCartel");
 ofertaCartel.innerHTML= ("<h2>OFERTA TIEMPO LIMITADO!!</h2>");
 document.body.append(ofertaCartel)
 
+/*profe no llegue a corregir todo para esta entrega, pero lo hago este finde para la segunda entrega del proyecto final
+corregido: paths para js, img, etc -- script al final - 
+prompts con el login: va a ser un formulario con event listener
+falta corregir: los filtros menor a van con un select/checkbox para interactuar con user
+los productos a ser agregados con la clase
+el login queda guardado sin la pass
+form > keybord event 
+Button registrate > event listener (click>Nuevo Usuario)
+Storage > guardar username y email pero no pass 
+nuevo producto > crear item 
+*/
 
+//EVENTOS - EVENTLISTENER
+//let login = document.getElementsByClassName("formulario")
+// if (getElementById("nombre") Storage==true) {
+    // esta funcion es, si da true: rellenar username y mail,
+    // else, pedir registro
+// }
+let username1 = document.getElementById ("nombre") = () => {console.log("nombre")}
+let email1 = document.getElementById("email") = () => {console.log("email")}
+let password1 = document.getElementById ("password")= () => {if ("password" == true) {console.log(true)}}
 
+let miformulario = document.getElementsByClassName("formulario");
+miformulario.addEvenListener("submit",validarFormulario);
+
+function validarFormulario(e) {
+    e.preventDefault();
+    console.log("Formulario Enviado")
+}
