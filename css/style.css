@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(11, 11, 105, 0.753);
+    background-color: rgb(50, 131, 224);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .Tienda {
@@ -12,13 +12,12 @@ body {
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
-    width: 50rem;
-    height: 70rem;
+    width: 25rem;
+    height: 45rem;
     border-radius: 20px;
     cursor: pointer;
-    box-shadow: 5px rgba(11, 11, 105, 0.753);
     transition: .4s;
-    background-color: rgb(218, 165, 66);
+    background-color: rgb(10, 38, 117);
 }
 
 img {
@@ -55,4 +54,25 @@ h2 {
   padding: var(--menuLinkPadding, 1.5rem 2.5rem);
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.formulario {
+    box-sizing: border-box;
+    display: inline;
+    padding: 5px;
+    margin: 3px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+.cosa1 {
+    display: inline;
+    color: rgb(40, 11, 105);
+}
+.cartel1 {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 40px;
+    background-color: rgba(10, 39, 117, 0.438);
+    border-radius: 20px;
+    
 }

@@ -1,4 +1,10 @@
 // carrito de compras de un negocio
+/*Entidades*/
+/*Variables*/
+userLogged = [];
+/*Funciones*/
+/*Event*/
+
 //LOGIN
 class logIn {
     constructor(username, email, password) {
@@ -8,18 +14,29 @@ class logIn {
     }
 }
 
-let username = prompt("Ingrese su nombre de usuario");
-let email = prompt("ingrese su correo electrónico"); 
-let password = prompt("ingrese su contraseña");
+let username = document.querySelector("#login_nombre").value;
+let email = document.querySelector("#login_correo").value; 
+let password = document.querySelector("#login_contraseña").value;
+let loginn = true
+console.log (username, email)
 
-console.log (username, email, password)
+const nuevoUser = new logIn (username, email, password);
+console.log(username, email)
+userLogged.push(new logIn)
 
-// compra x cantidad
-//let cantidad = parseInt(prompt("cuantas unidades queres?"));
-// También me gustaría sumarle un acumulador: acumulador(i) {cantidad + i++}
-// let cantidad= 0
-//--------------------
-//stock x clase
+listaUsers = []; 
+
+userLogged.push (nuevoUser)
+
+if(localStorage.getItem(userLogged) != null) {
+    listaUsers = JSON.parse (localStorage.getItem("userLogged"));
+    listaUsers.push(nuevoUser);
+    localStorage.setItem("userLogged", JSON.stringify(listaUsers));
+} else {userLogged.push(nuevoUser);
+    localStorage.setItem("userLogged", JSON.stringify(listaUsers));
+}
+
+//PRODUCTOS
 
 class Producto {
     constructor(item, categoria, precio, stock) {
@@ -28,7 +45,7 @@ class Producto {
         this.precio = precio;
         this.stock = stock;
     }
-    //stock
+//stock
     comprarProducto(cantidad) {
         if (this.stock > cantidad) {
             this.stock = this.stock - cantidad;
@@ -116,12 +133,6 @@ nuevo producto > crear item
     // esta funcion es, si da true: rellenar username y mail,
     // else, pedir registro
 // }
-let username1 = document.getElementById ("nombre") = () => {console.log("nombre")}
-let email1 = document.getElementById("email") = () => {console.log("email")}
-let password1 = document.getElementById ("password")= () => {if ("password" == true) {console.log(true)}}
-
-let miformulario = document.getElementsByClassName("formulario");
-miformulario.addEvenListener("submit",validarFormulario);
 
 function validarFormulario(e) {
     e.preventDefault();
