@@ -1,43 +1,12 @@
 // carrito de compras de un negocio
 /*Entidades*/
-/*Variables*/
-userLogged = [];
-/*Funciones*/
-/*Event*/
-
-//LOGIN
-class logIn {
+class LogIn {
     constructor(username, email, password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 }
-
-let username = document.querySelector("#login_nombre").value;
-let email = document.querySelector("#login_correo").value; 
-let password = document.querySelector("#login_contraseña").value;
-let loginn = true
-console.log (username, email)
-
-const nuevoUser = new logIn (username, email, password);
-console.log(username, email)
-userLogged.push(new logIn)
-
-listaUsers = []; 
-
-userLogged.push (nuevoUser)
-
-if(localStorage.getItem(userLogged) != null) {
-    listaUsers = JSON.parse (localStorage.getItem("userLogged"));
-    listaUsers.push(nuevoUser);
-    localStorage.setItem("userLogged", JSON.stringify(listaUsers));
-} else {userLogged.push(nuevoUser);
-    localStorage.setItem("userLogged", JSON.stringify(listaUsers));
-}
-
-//PRODUCTOS
-
 class Producto {
     constructor(item, categoria, precio, stock) {
         this.item = item;
@@ -45,31 +14,14 @@ class Producto {
         this.precio = precio;
         this.stock = stock;
     }
-//stock
-    comprarProducto(cantidad) {
-        if (this.stock > cantidad) {
-            this.stock = this.stock - cantidad;
-            } else {alert("En este momento no tenemos stock. Intente más tarde o contactenos")}
-            console.log(this.stock);}
-    sumaIva() {this.precio * 1.21}; 
-    }
-
-/* Alerta, de carrito de compra. alerta que no funciona. 
-Si esta dentro de la class no me marca error, pero no da la alerta. 
-Si esta fuera me marca undefined. 
-
-alert(`Tu carrito: \n
-    Producto: ${item} \n
-    Cantidad: ${cantidad} \n
-    Total: ${precioTotal}`);    
-*/
-
-const Case1 = new Producto ("case1", "acceCel", 850, 20);
-
-Case1.sumaIva (Case1);
-
-//Array: stock de la tienda
-let tiendita = [{item: "remera1", categoria: "remera", precio:1300, stock:5}, 
+}
+/*Variables*/
+//login
+userLogged = [];
+let accesz = document.getElementById("accesz");
+//tienda
+let tiendita = [
+    {item: "remera1", categoria: "remera", precio:1300, stock:5}, 
     {item: "remera2", categoria: "remera", precio:1300, stock: 12},
     {item: "remera3", categoria: "remera", precio:1400, stock: 11},
     {item: "remera4", categoria: "remera", precio:1400, stock: 13},
@@ -81,16 +33,28 @@ let tiendita = [{item: "remera1", categoria: "remera", precio:1300, stock:5},
     {item: "mousepad2", categoria: "varios", precio:750, stock: 3}]
 console.log(tiendita)
 
-tiendita.push(Case1);
-console.log(tiendita);
+/*Funciones*/
+//login
+const logInz = () => {
+    let username = document.querySelector("#login_nombre").value;
+    let email = document.querySelector("#login_correo").value; 
+    let password = document.querySelector("#login_contraseña").value;
 
-console.log(tiendita.indexOf(Case1));
+    const nuevoUser = new LogIn (username, email, password);
+    // userLogged.push(nuevoUser);
 
-let nuevoProducto= prompt("¿que diseño te gustaria que agreguemos?")
-tiendita.push(nuevoProducto);
-console.log(tiendita);
-
-//Filtros de busqueda
+    let listaUsers = [];
+    if(localStorage.getItem("userLogged") != null) {
+        listaUsers = JSON.parse(localStorage.getItem("userLogged"));
+        listaUsers.push(nuevoUser);
+        localStorage.setItem("userLogged", JSON.stringify(listaUsers));
+    } else { 
+        userLogged.push(nuevoUser);
+        localStorage.setItem("userLogged", JSON.stringify(listaUsers));
+    } 
+    console.log(nuevoUser)
+    return nuevoUser;
+}
 const filtroMenor1500 = tiendita.filter (el=>el.precio < 1500);
 console.log(filtroMenor1500);
 const filtroMenor1000 = tiendita.filter (el=>el.precio < 1000);
@@ -98,43 +62,52 @@ console.log(filtroMenor1000);
 const filtroMenor750 = tiendita.filter (el=>el.precio < 750);
 console.log(filtroMenor750);
 
-//dejo estos aca porque no pude deducir cómo configurarlos y me gustaria aprender:
-// const BuscarPrecioMayorA = tiendita.map (el=>el.precio > parseInt(prompt("ingrese precio mínimo")));
-// console.log(BuscarPrecioMayorA);
-// const buscar = tiendita.find (el=>el.categoria=prompt("Seleccione una de las categorías: 'remera', 'gorra', 'taza', 'varios','acceCel'")));
-// console.log(buscar);
+const oculTar = () => {
+    let tar = document.querySelectorAll(".tar")
+    if (tar.h2 == filtroMenor750){
+        tar.classlist.add("ocultar")
+    }
+} 
 
-//DOM 
-console.dir(document)
-document.body
+//producto
+const producto = () => {
+    let item = document.querySelector("#nuevo_item").value;
+    let categoria = document.querySelector("#nuevo_categoria").value; 
+    let precio = document.querySelector("#nuevo_precio").value;
+    let stock = document.querySelector("#nuevo_stock").value;
 
-let mercha = document.getElementsByClassName("divss");
-console.log(mercha);
-
-let ofertaCartel = document.createElement ("ofertaCartel");
-ofertaCartel.innerHTML= ("<h2>OFERTA TIEMPO LIMITADO!!</h2>");
-document.body.append(ofertaCartel)
-
-/*profe no llegue a corregir todo para esta entrega, pero lo hago este finde para la segunda entrega del proyecto final
-corregido: paths para js, img, etc -- script al final - 
-prompts con el login: va a ser un formulario con event listener
-falta corregir: los filtros menor a van con un select/checkbox para interactuar con user
-los productos a ser agregados con la clase
-el login queda guardado sin la pass
-form > keybord event 
-Button registrate > event listener (click>Nuevo Usuario)
-Storage > guardar username y email pero no pass 
-nuevo producto > crear item 
-*/
-
-//EVENTOS - EVENTLISTENER
-//let login = document.getElementsByClassName("formulario")
-// if (getElementById("nombre") Storage==true) {
-    // esta funcion es, si da true: rellenar username y mail,
-    // else, pedir registro
-// }
-
-function validarFormulario(e) {
-    e.preventDefault();
-    console.log("Formulario Enviado")
+    const nuevoProducto = new Producto (item, categoria, precio, stock);
+    console.log(nuevoProducto);
+    tiendita.push(nuevoProducto);
 }
+
+const comprarProducto =(cantidad) => {
+    if (this.stock > cantidad) {
+        this.stock - cantidad;
+        console.log(this.stock);
+        } else {alert("En este momento no tenemos stock. Intente más tarde o contactenos")}
+        console.log(this.stock);
+    }
+
+
+/*Event*/
+
+accesz.addEventListener("click",(e) => {
+    e.preventDefault();
+    logInz();
+})
+
+
+
+oculTar();
+
+
+/* Alerta, de carrito de compra. alerta que no funciona. 
+Si esta dentro de la class no me marca error, pero no da la alerta. 
+Si esta fuera me marca undefined. 
+
+alert(`Tu carrito: \n
+    Producto: ${item} \n
+    Cantidad: ${cantidad} \n
+    Total: ${precioTotal}`);    
+*/

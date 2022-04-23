@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,77 +11,113 @@
 
 <body>
     <header>
-        <form class="formulario">      
-            <input name="name" type="text" id="login_nombre" placeholder="Tu nombre" />   
+        <form class="formulario">
+            <input name="name" type="text" id="login_nombre" placeholder="Tu nombre" />
             <input name="email" type="text" id="login_correo" placeholder="Tu Email" />
             <input name="pass" type="text" id="login_contraseña" placeholder="Tu Contraseña" />
-            <input class="boton_formu" type="submit" value="ENVIAR"/>
-            <button>Registrate</button>
-            <p class="cosa1">¿No tenes cuenta? Registrate!</p>
+            <button id="accesz">Acceder</button>
+            <p class="cosa1">¿No tenes cuenta? ¡Registrate! &#10140; </p>
+            <button id="registro">Registrate</button>
         </form>
-        <div class="page">
-            <nav class="page__menu page__custom-settings menu">
-                <ul class="menu__list r-list">
-                    <li class="menu__group"><a href="#0" class="menu__link r-link text-underlined">INICIO</a></li>
-                    <li class="menu__group"><a href="#0" class="menu__link r-link text-underlined">TIENDA</a></li>
-                    <li class="menu__group"><a href="#0" class="menu__link r-link text-underlined">CONTACTO</a></li>
-                </ul>
-            </nav>
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu"><a href="#">INICIO</a></li>
+                <li class="menu"><a href="#">TIENDA</a></li>
+                <li class="menu"><a href="#">CONTACTO</a></li>
+            </ul>
+        </nav>
         </div>
         <h3 class="cartel1">Banca esta tiendita para ayudar a Athlos a crecer!
             Todo lo que compres acá va directo a nuestros noteros, analistas y streamers</h3>
     </header>
-    <div class="Tienda">
-        <div class="divss">
-            <img src="./img/shop1.jpg" alt="remera">
-            <h3 class="oferta">REMERA PERSONALIZADA</h3>
-            <h2>$1300</h2>
+    <div class="laygrid">
+        <aside class="filtros">
+            <div class="select_talle">
+                <h4>TALLE</h4>
+                <select name="select" id="select_talle">
+                    <option value="defaul">TALLE</option>
+                    <option value="talle1">Talle S</option>
+                    <option value="talle2">Talle M</option>
+                    <option value="talle3">Talle L</option>
+                </select>
+            </div>
+            <div class="select_precio">
+                <h4>RANGO PRECIOS</h4>
+                <select name="select2" id="select_precio">
+                    <option value="default">CORTO DE GUITA?</option>
+                    <option value="filtroMenor1500">Menos de 1500</option>
+                    <option value="filtroMenor1000">Menos de 1000</option>
+                    <option value="filtroMenor750">Menos de 750</option>
+                </select>
+            </div>
+            <button class="nuevo_prod"><a href="html/nuevoprod.html" target="_blank">
+                    NUEVO PRODUCTO
+                </a> </button>
+        </aside>
+        <div class="Tienda">
+            <div class="divss tar">
+                <img src="./img/shop1.jpg" alt="remera">
+                <h3 class="oferta">REMERA PERSONALIZADA</h3>
+                <h2>$1300</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop2.jpg" alt="remera">
+                <h3 class="oferta">REMERA PERSONALIZADA</h3>
+                <h2>$1300</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop3.jpg" alt="remera">
+                <h3 class="oferta">REMERA PERSONALIZADA</h3>
+                <h2>$1400</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop4.jpg" alt="remera">
+                <h3 class="oferta">REMERA PERSONALIZADA</h3>
+                <h2>$1400</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop5.jpg" alt="remera">
+                <h3>GORRA PERSONALIZADA</h3>
+                <h2>$990</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop6.jpg" alt="remera">
+                <h3>GORRA PERSONALIZADA</h3>
+                <h2>$990</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop7.jpg" alt="remera">
+                <h3>TAZA PERSONALIZADA</h3>
+                <h2>$650</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop8.jpg" alt="remera">
+                <h3>TAZA PERSONALIZADA</h3>
+                <h2>$650</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop9.jpg" alt="remera">
+                <h3>MOUSEPAD PERSONALIZADA</h3>
+                <h2>$750</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
+            <div class="divss tar">
+                <img src="./img/shop10.jpg" alt="remera">
+                <h3>MOUSEPAD PERSONALIZADA</h3>
+                <h2>$750</h2>
+                <button class="compra">COMPRAR</button>
+            </div>
         </div>
-        <div class="divss">
-            <img src="./img/shop2.jpg" alt="remera">
-            <h3 class="oferta">REMERA PERSONALIZADA</h3>
-            <h2>$1300</h2>
-        </div>
-        <div class="divss">
-            <img src="./img/shop3.jpg" alt="remera">
-            <h3 class="oferta">REMERA PERSONALIZADA</h3>
-            <h2>$1400</h2>
-        </div>
-        <div class="divss">
-            <img src="./img/shop4.jpg" alt="remera">
-            <h3 class="oferta">REMERA PERSONALIZADA</h3>
-            <h2>$1400</h2>
-        </div>
-        <div class="divss">
-            <img src="./img/shop5.jpg" alt="remera">
-            <h3>GORRA PERSONALIZADA</h3>
-            <h2>$990</h2>
-        </div>
-        <div class="divss">
-            <img src="./img/shop6.jpg" alt="remera">
-            <h3>GORRA PERSONALIZADA</h3>
-            <h2>$990</h2>
-        </div>
-        <div class="divss">
-            <img src="./img/shop7.jpg" alt="remera">
-            <h3>TAZA PERSONALIZADA</h3>
-            <h2>$650</h2>
-        </div>
-        <div class="divss">
-            <img src="./img/shop8.jpg" alt="remera">
-            <h3>TAZA PERSONALIZADA</h3>
-            <h2>$650</h2>
-        </div>
-        <div class="divss">
-            <img src="./img/shop9.jpg" alt="remera">
-            <h3>MOUSEPAD PERSONALIZADA</h3>
-            <h2>$750</h2>
-        </div>
-        <div class="divss">
-            <img src="./img/shop10.jpg" alt="remera">
-            <h3>MOUSEPAD PERSONALIZADA</h3>
-            <h2>$750</h2>
-        </div>
+    </div>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

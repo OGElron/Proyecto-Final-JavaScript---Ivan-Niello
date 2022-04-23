@@ -1,6 +1,29 @@
+.filtros {
+    grid-area: filtros;
+}
+.Tienda {
+    grid-area: Tienda;
+}
+.menu {
+    background-color:rgb(81, 180, 247);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    text-align: center;
+}
+ul, li {
+    display: inline;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+}
 body {
-    background-color: rgb(50, 131, 224);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(11, 57, 184);
+}
+.laygrid {
+    display: grid;
+    grid-template-columns: 50px, 1fr;
+    grid-template-areas: "filtros Tienda";
 }
 .Tienda {
     display: flex;
@@ -9,11 +32,12 @@ body {
 .divss {
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
     width: 25rem;
-    height: 45rem;
+    height: 50rem;
     border-radius: 20px;
     cursor: pointer;
     transition: .4s;
@@ -38,22 +62,7 @@ h4 {
 h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: yellow;
-}
-
-.menu{
-  background-color: var(--menuBackgroundColor, #f0f0f0);
-  box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
-}
-
-.menu__list{
-  display: flex;  
-}
-
-.menu__link{
-  padding: var(--menuLinkPadding, 1.5rem 2.5rem);
-  font-weight: 700;
-  text-transform: uppercase;
+    color: rgb(81, 180, 247);
 }
 
 .formulario {
@@ -66,13 +75,89 @@ h2 {
 }
 .cosa1 {
     display: inline;
-    color: rgb(40, 11, 105);
+    color: rgb(255, 255, 255);
+    padding-left: 20px;
 }
 .cartel1 {
     box-sizing: border-box;
     padding: 10px;
-    margin: 40px;
-    background-color: rgba(10, 39, 117, 0.438);
+    margin: 10px;
+    background-color: rgb(81, 180, 247);
     border-radius: 20px;
-    
+}
+.nuevo_prod {
+    margin: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: rgb(81, 180, 247);
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: larger;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+}
+.select_talle {
+    margin: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(81, 180, 247);
+    font-family: sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+}
+#select_talle {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.select_precio {
+    margin: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(81, 180, 247);
+    font-family: sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+}
+#select_precio {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.compra {
+    margin: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: x-large;
+    background-color: rgb(228, 180, 23);
+    font-family: sans-serif;
+    font-weight: 1000;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+}
+.ocultar {
+    display: none;
 }
