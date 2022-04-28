@@ -34,6 +34,7 @@ const producto = () => {
     const nuevoProducto = new Producto (item, categoria, precio, stock);
     
     tiendita.push(nuevoProducto);
+    console.log(tiendita)
 }
 
 /*Event*/
