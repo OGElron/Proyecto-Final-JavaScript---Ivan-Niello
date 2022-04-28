@@ -11,14 +11,13 @@
 
 <body>
     <header>
-        <form class="formulario">
+        <!-- Aca el user deberia permanecer logueado (por que es para admin) por eso no hace nada -->
+        <!-- <form id="form_regis2">
             <input name="name" type="text" id="login_nombre" placeholder="Tu nombre" />
             <input name="email" type="text" id="login_correo" placeholder="Tu Email" />
             <input name="pass" type="text" id="login_contraseña" placeholder="Tu Contraseña" />
-            <input class="boton_formu" type="submit" value="ENVIAR" />
-            <button>Registrate</button>
-            <p class="cosa1">¿No tenes cuenta? Registrate!</p>
-        </form>
+            <input type="submit" value="Acceder" />
+        </form> -->
         <nav class="menu">
             <ul class="menu__list">
                 <li class="menu"><a href="#">INICIO</a></li>
@@ -29,15 +28,15 @@
         </div>
         <h3 class="cartel2">Ingrese el nuevo producto llenando todas las entradas con el dato correspondiente</h3>
     </header>
-    <form class="formulario">
+    <form id="formulario7">
         <input name="name" type="text" id="nuevo_item" placeholder="Nombre Item" />
         <input name="email" type="text" id="nuevo_categoria" placeholder="Categoria" />
         <input name="pass" type="text" id="nuevo_precio" placeholder="Precio (solo números)" />
         <input name="pass" type="text" id="nuevo_stock" placeholder="Stock (solo números)" />
-        <button id="cargar">Cargar</button>
+        <input type="submit" id="cargar" value="Cargar"></button>
         <button id="limpiar">Limpiar</button>
     </form>
-    <script src="./js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

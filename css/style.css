@@ -22,26 +22,30 @@ body {
 }
 .laygrid {
     display: grid;
-    grid-template-columns: 50px, 1fr;
+    grid-template-columns: 20%, 80%;
     grid-template-areas: "filtros Tienda";
 }
 .Tienda {
     display: flex;
     flex-wrap: wrap;
     }
-.divss {
+.cards {
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
-    width: 25rem;
-    height: 50rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 20px;
     cursor: pointer;
     transition: .4s;
     background-color: rgb(10, 38, 117);
+    display: inline;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
 }
 
 img {
@@ -85,42 +89,10 @@ h2 {
     background-color: rgb(81, 180, 247);
     border-radius: 20px;
 }
-.busca2 {
-    margin: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgb(81, 180, 247);
-    font-family: sans-serif;
-    font-weight: 700;
-    justify-content: center;
-    text-align: center;
-    border-radius: 20px;
-    color: white;
-}
-#buscador {
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    font-family: sans-serif;
-    font-weight: 700;
-    justify-content: center;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-#busca3 {
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    font-family: sans-serif;
-    font-weight: 700;
-    justify-content: center;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 5px;}
+
 .nuevo_prod {
-    margin: 20px;
-    padding: 40px;
+    margin: 10px;
+    padding: 20px;
     box-sizing: border-box;
     background-color: rgb(81, 180, 247);
     font-family: sans-serif;
@@ -131,51 +103,18 @@ h2 {
     border-radius: 20px;
     color: white;
 }
-.select_talle {
-    margin: 20px;
-    padding: 10px;
+.botonazo {
+    margin: 10px;
+    padding: 20px;
     box-sizing: border-box;
     background-color: rgb(81, 180, 247);
     font-family: sans-serif;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: larger;
     justify-content: center;
     text-align: center;
     border-radius: 20px;
     color: white;
-}
-#select_talle {
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    font-family: sans-serif;
-    font-weight: 700;
-    justify-content: center;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-.select_precio {
-    margin: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgb(81, 180, 247);
-    font-family: sans-serif;
-    font-weight: 700;
-    justify-content: center;
-    text-align: center;
-    border-radius: 20px;
-    color: white;
-}
-#select_precio {
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    font-family: sans-serif;
-    font-weight: 700;
-    justify-content: center;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 5px;
 }
 .compra {
     margin: 5px;
@@ -193,4 +132,17 @@ h2 {
 }
 .ocultar {
     display: none;
+}
+.formulario7 {
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(81, 180, 247);
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: larger;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
 }

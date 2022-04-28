@@ -1,0 +1,63 @@
+//para usar luego de la clase de fetch//
+[
+    {
+    "item": "remera1", 
+    "categoria": "remera", 
+    "precio":1300, 
+    "stock":5
+    }, 
+    {
+        "item": "remera2",
+         "categoria": "remera",
+          "precio":1300,
+          "stock": 12
+        },
+    {
+        "item": "remera3",
+         "categoria": "remera",
+          "precio":1400,
+          "stock": 11
+        },
+    {
+        "item": "remera4",
+         "categoria": "remera",
+          "precio":1400,
+           "stock": 13
+        },
+    {
+        "item": "gorra1",
+         "categoria": "gorra",
+          "precio":990,
+           "stock":8
+        },
+    {
+        "item": "gorra2",
+         "categoria": "gorra",
+          "precio":990,
+           "stock": 6
+        },
+    {
+        "item": "taza1",
+         "categoria": "taza",
+          "precio":650,
+           "stock": 20
+        },
+    {
+        "item": "taza2",
+         "categoria": "taza",
+          "precio":650,
+           "stock":23
+        },
+    {
+        "item": "mousepad1",
+         "categoria": "varios",
+          "precio":750,
+           "stock":0
+        },
+    {
+        "item": "mousepad2",
+         "categoria": "varios",
+          "precio":750,
+           "stock": 3
+           }
+]
