@@ -31,6 +31,9 @@ let precioTotal = 0
 
 const contenedorCards = document.getElementById("contenedorCards")
 
+//carrito
+//const carrito = JSON.parse(localStorage.getItem('carrito')) || []
+
 /*Funciones*/
 //login
 const logInz = () => {
@@ -160,3 +163,19 @@ filtroMspads.addEventListener("click", () => {
     cardYbuttons(filtroMspads)
 })
 
+//validación
+//error en la validacion
+
+function validateForm () {
+        if (localStorage.getItem(userLogged) == "")
+            // (username.value == "") || (email.value == "") || (password.value == ""))
+             {
+            swal({
+                title: "Ingresa para seguir",
+                text: "Para poder continuar llena todos los campos con tus datos",
+                icon: "error",
+                button: "Ingresar nuevamente"
+            });
+          return false;
+        }
+      }
