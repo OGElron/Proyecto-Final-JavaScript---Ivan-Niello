@@ -31,6 +31,10 @@ let precioTotal = 0
 
 const contenedorCards = document.getElementById("contenedorCards")
 
+let username = document.querySelector("#login_nombre").value;
+let email = document.querySelector("#login_correo").value; 
+let password = document.querySelector("#login_contraseña").value;
+
 //carrito
 //const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
@@ -61,6 +65,7 @@ const logInz = () => {
 
 function Acceder (e) {
     e.preventDefault();
+    validateForm();
     logInz();
 }
 accessz.addEventListener("submit", Acceder)
@@ -167,8 +172,7 @@ filtroMspads.addEventListener("click", () => {
 //error en la validacion
 
 function validateForm () {
-        if (localStorage.getItem(userLogged) == "")
-            // (username.value == "") || (email.value == "") || (password.value == ""))
+        if ((username == "") || (email == "") || (password == ""))
              {
             swal({
                 title: "Ingresa para seguir",
