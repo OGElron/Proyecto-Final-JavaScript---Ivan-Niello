@@ -138,3 +138,10 @@ body {
   border-radius: 20px;
   color: white;
 }
+
+.carrito_vacio {
+  position: sticky;
+  float: bottom;
+  width: 20px;
+  height: 20px;
+}

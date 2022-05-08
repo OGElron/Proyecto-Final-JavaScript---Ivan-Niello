@@ -93,15 +93,6 @@ const cardYbuttons=(array) => {
 
                             `
         contenedorCards.append(divCard)
-        
-        //boton comprar
-        // const comprarBoton = document.getElementById(`comprar${tiendita.item}`)
-
-        // comprarBoton.addEventListener('click', ()=> {
-
-        //     comprarProducto()
-
-        // })
 
     })
 
@@ -183,3 +174,10 @@ function validateForm () {
           return false;
         }
       }
+
+// entrega operadores ternarios
+const tiendita2 = [
+    {item:"mousepad3",categoria: "mousepad",precio:450,stock: 9}]
+const tiendita3 = [...tiendita, ...tiendita2]
+// aqui hago un console log para que se entienda que funciona, pero la idea usando este operador seria agregar items a la tiendita en el futuro
+console.log(tiendita3)
