@@ -14,18 +14,14 @@ userLogged = [];
 
 let accessz = document.getElementById("form_regis");
 
-const tiendita = [
-    {item: "remera1",categoria: "remera",precio:1300,stock:5}, 
-    {item: "remera2",categoria: "remera",precio:1300,stock: 12},
-    {item: "remera3",categoria: "remera",precio:1400,stock: 11},
-    {item: "remera4",categoria: "remera",precio:1400,stock: 13},
-    {item: "gorra1",categoria: "gorra",precio:990,stock:8},
-    {item: "gorra2",categoria: "gorra",precio:990,stock: 6},
-    {item: "taza1",categoria: "taza",precio:650,stock: 20},
-    {item: "taza2",categoria: "taza",precio:650,stock:23},
-    {item: "mousepad1",categoria: "mousepad",precio:750,stock:0},
-    {item: "mousepad2",categoria: "mousepad",precio:750,stock: 3}
-]
+let tiendita = document.querySelector("#contenedorCards")
+fetch ("./js/data.json")
+    .then ((res) => res.json())
+    .then ((tienda) => {
+        tiendita = tienda
+        cardYbuttons (tiendita)
+        })
+    
 
 let precioTotal = 0
 
@@ -175,9 +171,10 @@ function validateForm () {
         }
       }
 
-// entrega operadores ternarios
-const tiendita2 = [
-    {item:"mousepad3",categoria: "mousepad",precio:450,stock: 9}]
-const tiendita3 = [...tiendita, ...tiendita2]
-// aqui hago un console log para que se entienda que funciona, pero la idea usando este operador seria agregar items a la tiendita en el futuro
-console.log(tiendita3)
+// esto queda comentado porque era la entrega anterior y todavia no me decido si va en el proyecto final, probablemente no
+// reentrega operadores ternarios
+// const tiendita2 = [
+//     {item:"mousepad3",categoria: "mousepad",precio:450,stock: 9}]
+// const tiendita3 = [...tiendita, ...tiendita2]
+// // aqui hago un console log para que se entienda que funciona, pero la idea usando este operador seria agregar items a la tiendita en el futuro
+// console.log(tiendita3)
