@@ -10,50 +10,66 @@
 </head>
 
 <body>
-    <header>
+    <header id="jeder">
+        <nav class="dropdownmenu">
+            <ul>
+                <li><a>Inicio</a></li>
+                <li><a>Nosotros</a></li>
+                <li><a>Academia</a></li>
+                <li><a>Contacto</a></li>
+            </ul>
+        </nav>
         <form id="form_regis">
             <input name="name" type="text" id="login_nombre" placeholder="Tu nombre" />
             <input name="email" type="text" id="login_correo" placeholder="Tu Email" />
             <input name="pass" type="text" id="login_contraseña" placeholder="Tu Contraseña" />
-            <input type="submit" value="Acceder" />
+            <input type="submit" value="ACCEDER" id="btn_acc" />
         </form>
-        <nav class="menu">
-            <ul class="menu__list">
-                <li class="menu"><a href="#">INICIO</a></li>
-                <li class="menu"><a href="#">TIENDA</a></li>
-                <li class="menu"><a href="#">CONTACTO</a></li>
-            </ul>
-        </nav>
+        <div id="carritoz">
+            <a>
+                <img src="./img/car_icon.png" alt="carrito" height="34px" width="34px">
+            </a>
         </div>
-        <h3 class="cartel1">Banca esta tiendita para ayudar a Athlos a crecer!
-            Todo lo que compres acá va directo a nuestros noteros, analistas y streamers</h3>
+        </div>
     </header>
     <div class="laygrid">
         <aside class="filtros">
             <div class="select_precio">
                 <h4 class="nuevo_prod">RANGO PRECIOS</h4>
-                <button class="botonazo" id="default">PRECIOS</button>
-                <button class="botonazo" id="mn1500">Menos de 1500</button>
-                <button class="botonazo" id="mn1000">Menos de 1000</button>
-                <button class="botonazo" id="mn750">Menos de 750</button>
+                <button class="botonazo" id="default">PRECIOS</button><br>
+                <button class="botonazo" id="mn1500">&#9735; 1500</button><br>
+                <button class="botonazo" id="mn1000">&#9735; 1000</button><br>
+                <button class="botonazo" id="mn750">&#9735; 750</button><br>
             </div>
             <div class="select_categoria">
                 <h4 class="nuevo_prod">CATEGORIAS</h4>
-                <button class="botonazo" id="default2">Todos</button>
-                <button class="botonazo" id="remeras">remeras</button>
-                <button class="botonazo" id="gorras">gorras</button>
-                <button class="botonazo" id="tazas">tazas</button>
-                <button class="botonazo" id="mspads">mousepads</button>
+                <button class="botonazo" id="default2">TODOS</button><br>
+                <button class="botonazo" id="remeras">REMERAS</button><br>
+                <button class="botonazo" id="gorras">GORRAS</button><br>
+                <button class="botonazo" id="tazas">TAZAS</button><br>
+                <button class="botonazo" id="mspads">MOUSEPADS</button><br>
             </div>
         </aside>
         <div id="contenedorCards">
         </div>
-        <div id="iconito"></div>
+        <div class="carrito_overlay">
+            <div class="carrito">
+                <h1>Mi compra</h1>
+
+                <div class="filas">
+
+                </div>
+                <div class="total">
+                    <p class="prc_total">TOTAL</p>
+                    <span class="total-price">$0</span>
+                        <button class="checkout">PAGAR</button>
+                </div>
+            </div>
+        </div>
     </div>
-    
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./js/app.js"></script>
-    
+
 </body>
 
 </html>

@@ -21,9 +21,6 @@ fetch ("./js/data.json")
         tiendita = tienda
         cardYbuttons (tiendita)
         })
-    
-
-let precioTotal = 0
 
 const contenedorCards = document.getElementById("contenedorCards")
 
@@ -85,7 +82,9 @@ const cardYbuttons=(array) => {
 
                             <p class= "precio_item"> ${tiendita.precio} </p>
 
-                            <button id= "btnCompra"> Comprar </button>
+                            <img src ="${tiendita.thumbnail}">
+                            
+                            <button class= "btnCompra"> COMPRAR </button>
 
                             `
         contenedorCards.append(divCard)
@@ -139,19 +138,19 @@ filtroDefault2.addEventListener("click", () => {
 })
 
 filtroRemeras.addEventListener("click", () => {
-    const filtroRemeras = tiendita.filter(el => el.categoria === "remera")
+    const filtroRemeras = tiendita.filter(el => el.categoria === "Remera")
     cardYbuttons(filtroRemeras)
 })
 filtroGorras.addEventListener("click", () => {
-    const filtroGorras = tiendita.filter(el => el.categoria === "gorra")
+    const filtroGorras = tiendita.filter(el => el.categoria === "Gorra")
     cardYbuttons(filtroGorras)
 })
 filtroTazas.addEventListener("click", () => {
-    const filtroTazas = tiendita.filter(el => el.categoria === "taza")
+    const filtroTazas = tiendita.filter(el => el.categoria === "Taza")
     cardYbuttons(filtroTazas)
 })
 filtroMspads.addEventListener("click", () => {
-    const filtroMspads = tiendita.filter(el => el.categoria === "mousepad")
+    const filtroMspads = tiendita.filter(el => el.categoria === "Mousepad")
     cardYbuttons(filtroMspads)
 })
 
@@ -178,3 +177,101 @@ function validateForm () {
 // const tiendita3 = [...tiendita, ...tiendita2]
 // // aqui hago un console log para que se entienda que funciona, pero la idea usando este operador seria agregar items a la tiendita en el futuro
 // console.log(tiendita3)
+
+//CARRITO
+//variables
+const carritoz = document.querySelector("#carritoz");
+const carrito_overlay = document.querySelector(".carrito_overlay"); 
+const btnCompraz = document.getElementsByClassName("btnCompra"); //array
+console.log(btnCompraz)
+const filas = document.getElementsByClassName("filas"); //deberia dar un array
+//abrir carrito
+carritoz.addEventListener("click", ()=> {
+    carrito_overlay.classList.add("open");
+})
+//cerrar carrito
+carrito_overlay.addEventListener("click", (e)=>{
+    if(e.target.classList.contains("carrito_overlay")){
+        carrito_overlay.classList.remove("open");
+    }
+})
+
+//comprar
+//determinar card x boton
+for(let i=0; i < btnCompraz.length; i++){
+    let boton = btnCompraz[i];
+    boton.addEventListener("click", agregarCarrito)
+}
+
+function agregarCarrito (e) {
+    let boton = e.target;
+    let prodComprado = boton.parentElement //aca deberia estar en el div 'cards' 
+    console.log(prodComprado)
+}
+//     let itemf = prodCompra.getAt tribute("item");
+//     let preciof = prodCompra.getAttribute("precio");
+//     let imagenf = prodCompra.querySelector("thumbnail");
+//     let itemId = prodCompra.querySelector("id")
+    
+//     llenarCarrito(itemf, preciof, imagenf)
+// }
+// function llenarCarrito(itemf, preciof, imagenf) {
+//     let filaProducto = document.createElement("div");
+//     let filas = document.querySelector(".filas");
+
+
+// //producto agregado? 
+//     for (let i=0; i< filas.length; i++) {
+//         if(filas[i].getAttribute("id")==itemId) {
+//             swal({
+//                 title: "Atención",
+//                 text: "Este producto ya fue agregado, si quieres más, modifica la cantidad",
+//                 icon: "alert",
+//                 button: "Continuar"
+//             });
+//             return;
+//         }
+//     }
+//     //crear el html al carrito
+//     let carritoz = `
+//     <div class="filas" id="${itemId}">
+//     <img class= "imagen_carrito" src"${imagenf}">
+//     <span>${itemf}</span>
+//     <span class="precioz">${preciof}</span>
+//     <input class="prod_cantidad" type="number" valor="1">
+//     <button class="quitarProd">Quitar</button>
+//     </div>`
+//     filas.innerHTML = carritoz;
+//     filaProducto.append(filas);
+//     filas.querySelector(".quitarProd").addEventListener("click", removeItem);
+//     filas.querySelector(".prod_cantidad").addEventListener("change", cambiarCantidad);
+//     precioTotal();
+// }
+
+// //eliminar elemento del carrito
+// function quitarProducto (e) {
+// 		let botonClicked = e.target
+// 		botonClicked.parentElement.parentElement.remove();
+// 		precioTotal ();
+// }
+
+// //cantidad
+// function cantidadCambiada (e) {
+//     let inputz = e.target;
+//     if (isNaN(inputz.value) || inputz.value <=0) {
+//         inputz.value = 1 // esta parte de la fx es para que no ingresen cant 0 o num negativos
+//     }
+//     precioTotal();
+// }
+
+// //total
+// function precioTotal() {
+//     let total = 0;
+//     for (const producto of filas) {
+//         let precio = producto.querySelector(".precioz").inner.Text;
+//         let cantidad = producto.querySelector(".prod_cantidad").value; 
+//         total += precio*cantidad;
+//     }
+//     document.querySelector(".precioTotal").innerText = "$"+ total //tener un 0 con una class aca?? 
+// 	document.querySelector("product-quantity").textContent = filas.length
+// } 

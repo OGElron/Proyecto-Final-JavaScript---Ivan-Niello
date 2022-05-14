@@ -1,63 +1,82 @@
 [
     {
-    "item": "remera1", 
-    "categoria": "remera", 
+    "item": "Remera Blanca Athlos", 
+    "categoria": "Remera", 
     "precio":1300, 
     "stock":5,
-    "thumbnail": "../img/shop1.png"
+    "thumbnail": "./img/shop1.jpg",
+    "id":"item1"
     }, 
     {
-    "item": "remera2",
-    "categoria": "remera",
+    "item": "Remera Negra Athlos",
+    "categoria": "Remera",
     "precio":1300,
-    "stock": 12
+    "stock": 12,
+    "thumbnail": "./img/shop3.jpg",
+    "id":"item2"
     },
     {
-    "item": "remera3",
-    "categoria": "remera",
+    "item": "Remera Blanca Athlos II",
+    "categoria": "Remera",
     "precio":1400,
-    "stock": 11
+    "stock": 11,
+    "thumbnail": "./img/shop2.jpg",
+    "id":"item3"
     },
     {
-    "item": "remera4",
-    "categoria": "remera",
+    "item": "Remera Negra Athlos II",
+    "categoria": "Remera",
     "precio":1400,
-    "stock": 13
+    "stock": 13,
+    "thumbnail": "./img/shop4.jpg",
+    "id":"item4"
     },
     {
-    "item": "gorra1",
-    "categoria": "gorra",
+    "item": "Gorra Athlos Azul",
+    "categoria": "Gorra",
     "precio":990,
-    "stock":8
+    "stock":8,
+    "thumbnail": "./img/shop6.jpg",
+    "id":"item5"
     },
     {
-    "item": "gorra2",
-    "categoria": "gorra",
+    "item": "Gorra Athlos",
+    "categoria": "Gorra",
     "precio":990,
-    "stock": 6
+    "stock": 6,
+    "thumbnail": "./img/shop5.jpg",
+    "id":"item6"
     },
     {
-    "item": "taza1",
-    "categoria": "taza",
+    "item": "Taza Athlos",
+    "categoria": "Taza",
     "precio":650,
-    "stock": 20
+    "stock": 20,
+    "thumbnail": "./img/shop7.jpg",
+    "id":"item7"
     },
     {
-    "item": "taza2",
-    "categoria": "taza",
+    "item": "Taza Athlos II",
+    "categoria": "Taza",
     "precio":650,
-    "stock":23
+    "stock":23,
+    "thumbnail": "./img/shop8.jpg",
+    "id":"item8"
     },
     {
-    "item": "mousepad1",
-    "categoria": "varios",
+    "item": "Mousepad Athlos",
+    "categoria": "Mousepad",
     "precio":750,
-    "stock":0
+    "stock":0,
+    "thumbnail": "./img/shop9.jpg",
+    "id":"item9"
     },
     {
-    "item": "mousepad2",
-    "categoria": "varios",
+    "item": "Mousepad Athlos II",
+    "categoria": "Mousepad",
     "precio":750,
-    "stock": 3
+    "stock": 3,
+    "thumbnail": "./img/shop10.jpg",
+    "id":"item10"
     }
 ]
