@@ -175,3 +175,30 @@ body {
     text-align: center;
     padding: 5px
 }
+#default{ 
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #0146a0 10%, #57b3d8 100%);
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    font-family: Impact, sans-serif;
+    font-size: large;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px rgb(64, 88, 63)
+}
+#default2
+{ 
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #0146a0 30%, #57b3d8 100%);
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    font-family: Impact, sans-serif;
+    font-size: large;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px rgb(64, 88, 63)
+}
