@@ -20,7 +20,17 @@ let accessz = document.getElementById("form_regis");
 let username = document.querySelector("#login_nombre").value;
 let email = document.querySelector("#login_correo").value; 
 let password = document.querySelector("#login_contraseña").value;
-
+//carrito
+let tiendita = document.querySelector("#contenedorCards")
+const carritoz = document.querySelector("#carritoz");
+const carrito_overlay = document.querySelector(".carrito_overlay"); 
+const btnCompraz = document.getElementsByClassName("btnCompra"); //array
+const carrito = []
+const addCarrito = document.getElementById("addCarrito");
+const vaciarCar = document.getElementById("vaciar_car")
+const numCar = document.getElementById("num_car")
+const precioTotal = document.getElementById("precioTotal")
+const pagar = document.getElementById("checkout")
 /*Funciones*/
 //login
 const logInz = () => {
@@ -71,9 +81,14 @@ function validateForm () {
 
 //Tienda
 //creador de cards para la tienda
-let tiendita = document.querySelector("#contenedorCards")
 
 
+// swal({
+//     title: "Ingresa para seguir",
+//     text: "Para poder continuar llena todos los campos con tus datos",
+//     icon: "error",
+//     button: "Ingresar nuevamente"
+// });
 fetch ("./js/data.json")
     .then (res => res.json())
     .then (tienda => {
@@ -102,11 +117,15 @@ const cardYbuttons =(array) => {
 
                             <img src ="${tiendita.thumbnail}">
                             
-                            <button class="btnCompra"> COMPRAR </button>
+                            <button id="add${tiendita.id}" class="btnCompra"> COMPRAR </button>
 
                             `
         contenedorCards.append(divCard)
-
+//boton de compra
+        const boton = document.getElementById(`add${tiendita.id}`)
+        boton.addEventListener("click", () => {
+            agregarCarrito(tiendita.id)
+        })
     })
 
 }
@@ -173,17 +192,17 @@ filtroMspads.addEventListener("click", () => {
 })
 
 
-//CARRITO
-//variables
+//CARRITO/fx
 
-const carritoz = document.querySelector("#carritoz");
-const carrito_overlay = document.querySelector(".carrito_overlay"); 
-const btnCompraz = document.getElementsByClassName("btnCompra"); //array
-// console.log(btnCompraz)
-const filas = document.getElementsByClassName("filas"); //deberia dar un array
 //abrir carrito
 carritoz.addEventListener("click", ()=> {
     carrito_overlay.classList.add("open");
+})
+
+//vaciar carrito 
+vaciarCar.addEventListener("click", ()=>{
+    carrito.length = 0
+    inCarrito ();
 })
 //cerrar carrito
 carrito_overlay.addEventListener("click", (e)=>{
@@ -191,10 +210,42 @@ carrito_overlay.addEventListener("click", (e)=>{
         carrito_overlay.classList.remove("open");
     }
 })
+// carrito itself
+const agregarCarrito = (prodID) => {
+    const itemz = tiendita.find((tiendita) => tiendita.id === prodID);
+    carrito.push(itemz);
+    inCarrito();
+}
+const quitarCarrito = (prodID) => {
+    const itemz = carrito.find ((tiendita)=> tiendita.id === prodID)
+    const indice = carrito.indexOf(itemz);
+    carrito.splice(indice, 1);
+    inCarrito();
+}
+const inCarrito = () => {
+    addCarrito.innerHTML= ""
+    carrito.forEach((tiendita) => {
+        const div = document.createElement('div')
+        div.className = "produComprado"
+        div.innerHTML = `
+            <p>${tiendita.item}</p>
+            <p>${tiendita.precio}</p>
+            <button onclick= "quitarCarrito(${tiendita.id})" class="btn-dngr"> x </button>
+            `
+    addCarrito.appendChild(div);       
+    }) 
+   //numero Carrito
+   numCar.innerText = carrito.length
+   //precio Total 
+   precioTotal.innerText = carrito.reduce ((acc,prod)=> acc + prod.precio, 0);
 
-//comprar
-// iterar/determinar card x boton
-for(let i=0; i< btnCompraz.length; i++) {
-    boton = btnCompraz[i];
-    console.log(boton)
+    //pagar (acá iriamos a la info de la tarjeta)
+    pagar.addEventListener("click", ()=>{
+        swal({
+    title: "Gracias por tu compra!",
+    text: "Su tarjeta ha sido clonada y se utilizará para fines maléficos",
+    icon: "success",
+    button: "Entendido"
+    })
+})
 }

@@ -5,7 +5,7 @@
     "precio":1300, 
     "stock":5,
     "thumbnail": "./img/shop1.jpg",
-    "id":"item1"
+    "id":1
     }, 
     {
     "item": "Remera Negra Athlos",
@@ -13,7 +13,7 @@
     "precio":1300,
     "stock": 12,
     "thumbnail": "./img/shop3.jpg",
-    "id":"item2"
+    "id":2
     },
     {
     "item": "Remera Blanca Athlos II",
@@ -21,7 +21,7 @@
     "precio":1400,
     "stock": 11,
     "thumbnail": "./img/shop2.jpg",
-    "id":"item3"
+    "id":3
     },
     {
     "item": "Remera Negra Athlos II",
@@ -29,7 +29,7 @@
     "precio":1400,
     "stock": 13,
     "thumbnail": "./img/shop4.jpg",
-    "id":"item4"
+    "id":4
     },
     {
     "item": "Gorra Athlos Azul",
@@ -37,7 +37,7 @@
     "precio":990,
     "stock":8,
     "thumbnail": "./img/shop6.jpg",
-    "id":"item5"
+    "id":5
     },
     {
     "item": "Gorra Athlos",
@@ -45,7 +45,7 @@
     "precio":990,
     "stock": 6,
     "thumbnail": "./img/shop5.jpg",
-    "id":"item6"
+    "id":6
     },
     {
     "item": "Taza Athlos",
@@ -53,7 +53,7 @@
     "precio":650,
     "stock": 20,
     "thumbnail": "./img/shop7.jpg",
-    "id":"item7"
+    "id":7
     },
     {
     "item": "Taza Athlos II",
@@ -61,7 +61,7 @@
     "precio":650,
     "stock":23,
     "thumbnail": "./img/shop8.jpg",
-    "id":"item8"
+    "id":8
     },
     {
     "item": "Mousepad Athlos",
@@ -69,7 +69,7 @@
     "precio":750,
     "stock":0,
     "thumbnail": "./img/shop9.jpg",
-    "id":"item9"
+    "id":9
     },
     {
     "item": "Mousepad Athlos II",
@@ -77,6 +77,6 @@
     "precio":750,
     "stock": 3,
     "thumbnail": "./img/shop10.jpg",
-    "id":"item10"
+    "id":10
     }
 ]
