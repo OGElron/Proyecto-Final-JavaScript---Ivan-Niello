@@ -23,6 +23,7 @@ let password = document.querySelector("#login_contraseña").value;
 //carrito
 let tiendita = document.querySelector("#contenedorCards")
 const carritoz = document.querySelector("#carritoz");
+const carritoz2 = document.querySelector("#closero")
 const carrito_overlay = document.querySelector(".carrito_overlay"); 
 const btnCompraz = document.getElementsByClassName("btnCompra"); //array
 const carrito = []
@@ -205,11 +206,15 @@ vaciarCar.addEventListener("click", ()=>{
     inCarrito ();
 })
 //cerrar carrito
-carrito_overlay.addEventListener("click", (e)=>{
+carritoz2.addEventListener("click", (e)=>{
     if(e.target.classList.contains("carrito_overlay")){
         carrito_overlay.classList.remove("open");
     }
 })
+carrito_overlay.addEventListener("click", ()=>{
+        carrito_overlay.classList.remove("open");
+    })
+
 // carrito itself
 const agregarCarrito = (prodID) => {
     const itemz = tiendita.find((tiendita) => tiendita.id === prodID);
@@ -228,8 +233,14 @@ const inCarrito = () => {
         const div = document.createElement('div')
         div.className = "produComprado"
         div.innerHTML = `
-            <p>${tiendita.item}</p>
-            <p>${tiendita.precio}</p>
+            <p class="prodNom" >${tiendita.item}</p>
+            <p class="prodPrec">${tiendita.precio}</p>
+            <select>Cantidad
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option><a href="contacto">+</a></option>
+            </select>
             <button onclick= "quitarCarrito(${tiendita.id})" class="btn-dngr"> x </button>
             `
     addCarrito.appendChild(div);       
