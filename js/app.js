@@ -53,6 +53,8 @@ const logInz = () => {
     } 
     console.log(nuevoUser)
     return nuevoUser;
+
+    
 }
 
 /*Event*/
@@ -68,35 +70,33 @@ accessz.addEventListener("submit", Acceder)
 //error en la validacion
 
 function validateForm () {
-    if ((username == "") || (email == "") || (password == ""))
+    if (localStorage.getItem("userLogged")=== null)
          {
         swal({
             title: "Ingresa para seguir",
             text: "Para poder continuar llena todos los campos con tus datos",
             icon: "error",
             button: "Ingresar nuevamente"
-        });
-      return false;
-    }
+        })}
+      else (
+          swal({
+        title: "Usuario ingresado",
+        text: "Puede continuar con la compra",
+        icon: "success",
+        button: "Continuar"
+    }))    
   }
 
 //Tienda
-//creador de cards para la tienda
 
-
-// swal({
-//     title: "Ingresa para seguir",
-//     text: "Para poder continuar llena todos los campos con tus datos",
-//     icon: "error",
-//     button: "Ingresar nuevamente"
-// });
+//fetch a base de datos con los items en la tienda
 fetch ("./js/data.json")
     .then (res => res.json())
     .then (tienda => {
         tiendita = tienda
         cardYbuttons (tiendita)
         })
-
+//creador de cards para la tienda
 const contenedorCards = document.getElementById("contenedorCards")
 
 const cardYbuttons =(array) => {
@@ -131,7 +131,7 @@ const cardYbuttons =(array) => {
 
 }
 
-//-----filtros
+//filtros
 const filtroDefault = document.getElementById("default")
 
 const filtro1500 = document.getElementById("mn1500")
@@ -216,17 +216,30 @@ carrito_overlay.addEventListener("click", ()=>{
     })
 
 // carrito itself
+//agregar al Carrito
 const agregarCarrito = (prodID) => {
     const itemz = tiendita.find((tiendita) => tiendita.id === prodID);
+    if (carrito.includes(itemz)) {
+        swal({
+            title: "Atencion",
+            text: "Este item ya fue ingresado. Si quiere más de uno continue, sino recuerde elminarlo del carrito haciendo click en el boton adyacente",
+            icon: "warning",
+            button: "Entendido"
+            })
+    }
     carrito.push(itemz);
     inCarrito();
 }
+//quitar del Carrito
 const quitarCarrito = (prodID) => {
     const itemz = carrito.find ((tiendita)=> tiendita.id === prodID)
     const indice = carrito.indexOf(itemz);
     carrito.splice(indice, 1);
     inCarrito();
 }
+ 
+ 
+//imprimir/ ver el carrito
 const inCarrito = () => {
     addCarrito.innerHTML= ""
     carrito.forEach((tiendita) => {
@@ -235,21 +248,14 @@ const inCarrito = () => {
         div.innerHTML = `
             <p class="prodNom" >${tiendita.item}</p>
             <p class="prodPrec">${tiendita.precio}</p>
-            <select>Cantidad
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option><a href="contacto">+</a></option>
-            </select>
             <button onclick= "quitarCarrito(${tiendita.id})" class="btn-dngr"> x </button>
             `
     addCarrito.appendChild(div);       
     }) 
-   //numero Carrito
+   //numero en icono Carrito
    numCar.innerText = carrito.length
    //precio Total 
    precioTotal.innerText = carrito.reduce ((acc,prod)=> acc + prod.precio, 0);
-
     //pagar (acá iriamos a la info de la tarjeta)
     pagar.addEventListener("click", ()=>{
         swal({
@@ -257,6 +263,8 @@ const inCarrito = () => {
     text: "Su tarjeta ha sido clonada y se utilizará para fines maléficos",
     icon: "success",
     button: "Entendido"
-    })
+    });
+    carrito.length = 0
+    inCarrito ();
 })
 }
