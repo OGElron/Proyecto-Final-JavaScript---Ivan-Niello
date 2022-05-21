@@ -1,9 +1,4 @@
-//------- carrito
-// if (document.readyState == 'loading') {
-// 	document.addEventListener("DOMContentLoaded", ready) //---> PRESTAR ATTE A LAS may. ready en este caso es la funcion de abajo, que cuando se cumple me habilita los botones para quitar productos
-// } else {
-// 	ready()
-// }
+//Login
 /*Entidades*/
 class LogIn {
     constructor(username, email, password) {
@@ -87,7 +82,7 @@ function validateForm () {
     }))    
   }
 
-//Tienda
+//Tienda+Carrito
 
 //fetch a base de datos con los items en la tienda
 fetch ("./js/data.json")
@@ -193,7 +188,7 @@ filtroMspads.addEventListener("click", () => {
 })
 
 
-//CARRITO/fx
+//CARRITO
 
 //abrir carrito
 carritoz.addEventListener("click", ()=> {
